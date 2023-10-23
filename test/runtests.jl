@@ -1,5 +1,5 @@
 using DrWatson, Test
-@quickactivate "Epidimiologie"
+@quickactivate "Epidemiologie"
 
 # Here you include files using `srcdir`
 # include(srcdir("file.jl"))
@@ -8,7 +8,7 @@ using DrWatson, Test
 println("Starting tests")
 ti = time()
 
-@testset "Epidimiologie tests" begin
+@testset "Epidemiologie tests" begin
     @test 1 == 1
 end
 
