@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Problem Sheet 1}
+\author{Robin Elias \and Piet Schimke \and Andrea Farfan Aragon}
+\date{}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+    All the programming task are solved using the julia programming language.
+    To reproduce the solution pull \href{https://github.com/relias96/Epidemiologie}{https://github.com/relias96/Epidemiologie} and following the Instructions in the README\.md file.
+    Then run scripts\Sheet1\T1.jl
+\end{center}
+ 
+\section*{A}
+Given the DGL $\frac{dI}{dT}=\beta SI- \gamma I $ and the assumption $S = N = const.$ can be simplified:
+
+$$\frac{dI}{dT}=\beta NI- \gamma I = I(\beta N- \gamma)$$
+
+Since this DGL is linear in I, the solution of the DGL can be determined as:
+
+$$ I(t) = I_0 *e^{\beta N - \gamma}$$
+
+\section*{B}
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 0.8\linewidth]{../../../plots/T1/Germany.png}
+    \caption{Germany}
+    \label{fig:Germany}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 0.8\linewidth]{../../../plots/T1/Italy.png}
+    \caption{Italy}
+    \label{fig:Italy}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 0.8\linewidth]{../../../plots/T1/China.png}
+    \caption{China}
+    \label{fig:China}
+\end{figure}
+
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    Country & $\lambda$ &$R_0$  \\
+    \hline
+    Germany &0.203     &2.62   \\
+    Italy	 &0.199     &2.59   \\
+    China	 &0.028     &1.224  \\
+    \hline
+\end{tabular}
+
+
+
+\section*{C}
+
+Our Model only fits under the disease-free equilibrium assumtion. For longer timeseries this assumtion is violated and the Model no longer fits the data as well as for short timeseries.
+
+\section*{D}
+
+Since $R_0 = \frac{\beta N}{\gamma}$ is density dependent in $N$ China should have a higher $R_0$ Value. However, because our model cannot account for policies such as quarantine, our model is inaccurate in that respect.
+
+
+
+\end{document}
