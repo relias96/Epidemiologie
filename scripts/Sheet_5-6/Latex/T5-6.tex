@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{float}
+
+\title{Problem Sheet 1}
+\author{Robin Elias \and Piet Schimke \and Andrea Farfan Aragon}
+\date{}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+    All the programming task are solved using the julia programming language.
+    To reproduce the solution pull \href{https://github.com/relias96/Epidemiologie}{https://github.com/relias96/Epidemiologie} and following the Instructions in the README\.md file.
+    Then run scripts\\Sheet1\\T1.jl
+\end{center}
+ 
+\section*{A}
+
+\begin{equation}
+    \begin{split}
+        R_0 = \frac{transmissionrate}{deathrate + recoveryrate} = \frac{\beta N_0}{\alpha + d + \theta}
+    \end{split}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.8\linewidth]{../../../plots/T2/Plot1.png}
+    \caption{Optimize $R_0$ over virulenz $\alpha$}\label{fig:R0}
+\end{figure}
+
+$R_0$ reaches its maximum of $6.66$ at $\alpha = 39.10$
+
+\section*{B}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.8\linewidth]{../../../plots/T2/Plot2.png}
+    \caption{$R_0(\alpha_{\max})$ and $\alpha_{\max}$ over $c2$ }\label{fig:c2}
+\end{figure}
+
+\section*{C}
+
+Figure \ref*{fig:c2} shows that an increase in c2 would lead to an increase in $\alpha_{\max}$ and an decrease $R_0(\alpha_{\max})$. We expect a similar behavior when increasing the deathrate $d$.
+
+
+\section*{D}
+
+We assume that a vaccination has an inpact on the virulenz $\alpha$.
+
+\begin{equation}
+    \alpha(v) = \alpha_0 * (1-v)
+\end{equation}
+
+with the other dependencies we get:
+
+\begin{equation}
+    \beta(\alpha(v)) = \frac{c_0 * \alpha(v)}{c_1 + \alpha(v)} = \frac{c_0 * \alpha_0 * (1-v)}{c_1 + \alpha_0 * (1-v)}
+\end{equation}
+
+and 
+
+\begin{equation}
+    \theta(\alpha(v)) = \frac{c_2}{\alpha(v)} =\frac{c_2}{\alpha_0 * (1-v)}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.8\linewidth]{../../../plots/T2/Plot3.png}
+    \caption{Vaccination}\label{fig:vac}
+\end{figure}
+\end{document}
