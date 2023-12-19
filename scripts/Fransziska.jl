@@ -47,8 +47,10 @@ function plotOrbitdiagramm()
     end
     display(fig)
 end
-#plotOrbitdiagramm()
-for i in 0.01:0.01:0.5
+
+
+#plotOrbitdiagramm() functioniert grade noch nicht
+for i in 0.01:0.01:0.5 # ersetze irgendeinen Parameter durch i
     p0 = (1.5, 0.12, 0.1, 0.5, 0.75, 0.23, 2, 0.3, 0.1)
     u0 = [1.0,1.0,1.0]
     ds = CoupledODEs(eom, u0, p0)
